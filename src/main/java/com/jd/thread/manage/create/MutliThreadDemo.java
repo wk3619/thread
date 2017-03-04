@@ -1,4 +1,4 @@
-package com.jd.thread.manage;
+package com.jd.thread.manage.create;
 
 public class MutliThreadDemo {
     public static void main(String[] args) {

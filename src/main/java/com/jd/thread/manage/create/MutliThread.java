@@ -1,4 +1,4 @@
-package com.jd.thread.manage;
+package com.jd.thread.manage.create;
 
 public class MutliThread extends Thread{
 
