@@ -16,5 +16,8 @@ public class Client {
     	
     	t.interrupt();
     	
+    	
+    	System.out.println("end");
+    	
     }
 }
