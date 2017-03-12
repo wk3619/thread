@@ -4,8 +4,8 @@ public class ExtendThreadTest {
     public static void main(String[] args) {
 
         //创建线程 
-    	ExtendThread t1=new ExtendThread("Window 1"); 
-    	ExtendThread t2=new ExtendThread("Window 2"); 
+    	ExtendThread t1=new ExtendThread("t1"); 
+    	ExtendThread t2=new ExtendThread("t2"); 
         
         t1.start(); 
         t2.start(); 
