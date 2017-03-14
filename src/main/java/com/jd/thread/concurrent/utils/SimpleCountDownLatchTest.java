@@ -1,6 +1,7 @@
 package com.jd.thread.concurrent.utils;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 
 public class SimpleCountDownLatchTest {
@@ -18,7 +19,8 @@ public class SimpleCountDownLatchTest {
     	
     	
     	try {
-			doneSingal.await();
+			//doneSingal.await();
+    		doneSingal.await(10,TimeUnit.MILLISECONDS);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
