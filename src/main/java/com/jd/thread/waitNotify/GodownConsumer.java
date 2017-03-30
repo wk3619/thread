@@ -8,6 +8,7 @@ public class GodownConsumer extends Thread {
 	GodownConsumer(int neednum, Godown godown) {
 		this.neednum = neednum;
 		this.godown = godown;
+	
 	}
 
 	public void run() {
