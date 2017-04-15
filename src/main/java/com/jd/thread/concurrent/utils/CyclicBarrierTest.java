@@ -25,10 +25,10 @@ public class CyclicBarrierTest {
 	    	 exec.execute(new CyclicBarrierThread(barrier));
 	     }
 	     
-	     System.out.println("isBroken:"+barrier.isBroken()+",numberWaiting:"+barrier.getNumberWaiting()+",parties:"+barrier.getParties());
+	     //System.out.println("isBroken:"+barrier.isBroken()+",numberWaiting:"+barrier.getNumberWaiting()+",parties:"+barrier.getParties());
 	     
 	     exec.shutdown(); 
-	     System.out.println("main end");
+	     //System.out.println("main end");
 	 }
 }
 
@@ -44,9 +44,9 @@ class CyclicBarrierThread implements Runnable{
 	
 	
 	public void run() {
-		System.out.println(Thread.currentThread().getName()+" run "); 
+		//System.out.println(Thread.currentThread().getName()+" run "); 
 		try { 
-            Thread.sleep(random.nextInt(1000)); 
+            Thread.sleep(random.nextInt(2000)); 
         } catch (InterruptedException e) { 
             e.printStackTrace(); 
         } 
@@ -57,7 +57,7 @@ class CyclicBarrierThread implements Runnable{
         	//cyclicBarrier.await(2000, TimeUnit.MILLISECONDS);
         	
         	
-        	 System.out.println(Thread.currentThread().getName()+" wait"); 
+        	 //System.out.println(Thread.currentThread().getName()+" wait"); 
         	
         	
         } catch (InterruptedException e) { 
