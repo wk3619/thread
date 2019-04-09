@@ -2,11 +2,7 @@ package com.jd.thread.volatileTest;
 
 
 
-/**
- * 借助LinkedBlockingQueue来实现生产者消费者模式
- * @author gongbinglai
- *
- */
+
 public class VolatileTest{
     
 	
@@ -18,6 +14,7 @@ public class VolatileTest{
         
         
         //当jvm被设置为server模式时，线程执行时获取的为私有栈中的变量，
+        // 不知道什么原因，停止都是生效的
         //volatileThread.setRunning设置的为公共内存中的变量，所以线程不会停止
         volatileThread.setRunning(false);
         
@@ -28,12 +25,11 @@ public class VolatileTest{
 
 
 
-
 class VolatileThread extends Thread{
 	
-	//private boolean isRunning = true;
+	private boolean isRunning = true;
 	
-	private volatile boolean isRunning = true;
+//	private volatile boolean isRunning = true;
 	
 	private String name;
 

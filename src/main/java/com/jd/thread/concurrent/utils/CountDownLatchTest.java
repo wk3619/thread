@@ -23,14 +23,15 @@ public class CountDownLatchTest {
        for(Player p : plays) {//各就各位     
             exe.execute(p);  
         }     
-        System.out.println("比赛开始");     
-        begin.countDown();//宣布开始     
+        System.out.println("比赛开始"+System.nanoTime());
+        System.out.println("比赛开始"+System.currentTimeMillis());
+        begin.countDown();//宣布开始
        try {     
             end.await();//等待结束     
         } catch (InterruptedException e) {     
             e.printStackTrace();     
         } finally {     
-            System.out.println("比赛结束");     
+            System.out.println("比赛结束"+System.nanoTime());
         }     
        //注意：此时main线程已经要结束了，但是exe线程如果不关闭是不会结束的     
         exe.shutdown();     
@@ -56,9 +57,11 @@ class Player implements Runnable {
         try {     
              
         	 begin.await();//必须等到裁判countdown到0的时候才开始     
-        	 System.out.println("Play "+id+" running "); 
-        	 Thread.sleep((long)(Math.random()*1000));//模拟跑步需要的时间     
-             System.out.println("Play "+id+" has arrived. ");     
+        	 System.out.println("Play "+id+" running "+System.currentTimeMillis());
+
+
+            Thread.sleep((long)(Math.random()*1000));//模拟跑步需要的时间
+             System.out.println("Play "+id+" has arrived. "+System.currentTimeMillis());
                  
          } catch (InterruptedException e) {     
              e.printStackTrace();     

@@ -12,9 +12,10 @@ public class JoinTest {
         AThread at = new AThread(bt);  
         try {  
             bt.start();  
-            Thread.sleep(1000);  
+            Thread.sleep(800);
             at.start();  
-            at.join();  
+           // at.join();  //
+
         } catch (Exception e) {  
             System.out.println("Exception from main");  
         }  
